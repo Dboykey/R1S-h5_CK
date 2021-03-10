@@ -46,7 +46,6 @@ jobs:
         run: |
           # 第二部分：源码下载
           chmod +x $DIY_P2_SH
-          cd h5
           $GITHUB_WORKSPACE/$DIY_P2_SH
 
       - name: Plug-in for lede integration
