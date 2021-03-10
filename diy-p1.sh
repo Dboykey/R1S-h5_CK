@@ -1,8 +1,8 @@
 ﻿#!/bin/bash
 #
-########################################
-####  第一部分：环境部署和源码下载  ####
-########################################
+##############################
+####  第一部分：环境部署  ####
+##############################
 
 # 环境部署
 sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
@@ -43,17 +43,3 @@ alias upup='./scripts/feeds update -a && ./scripts/feeds install -a'
 # 安装 Repo
 git clone https://github.com/friendlyarm/repo
 sudo cp repo/repo /usr/bin/
-
-# 下载 friendlywrt-h5 源码
-cd /workdir
-mkdir h5
-cd h5
-repo init -u https://github.com/friendlyarm/friendlywrt_manifests -b master -m h5.xml --repo-url=https://github.com/friendlyarm/repo  --no-clone-bundle
-repo sync -c --no-clone-bundle -j8
-
-# 替换 wrt 代码为 lede 版
-rm -rf friendlywrt
-git clone https://github.com/coolsnowwolf/openwrt friendlywrt
-
-ln -sf /workdir/h5 $GITHUB_WORKSPACE/h5
-ln -sf /workdir/h5/friendlywrt $GITHUB_WORKSPACE/openwrt
