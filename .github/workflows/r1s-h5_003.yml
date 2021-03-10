@@ -69,28 +69,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
-      #- name: Assemble Artifact
-      #  run: |
-      #    rm -rf ./artifact/
-      #    mkdir -p ./artifact/
-      #    find h5/out/ -name "FriendlyWrt_*.gz" | xargs -i mv -f {} ./artifact/
-      #    find h5/friendlywrt/bin/ -name "openwrt-sunxi-cortexa53-*-squashfs-sdcard.img.gz" | xargs -i mv -f {} ./artifact/
-      #
-      #    #添加打包代码的命令进来，再添加发布到release的代码在后面
-      #
-      #- name: Upload Artifact
-      #  uses: actions/upload-artifact@master
-      #  with:
-      #    # 压缩打包并提供下载
-      #    name: FriendlyWrt_NanoPi-R1S H5 Lean
-      #    path: ./artifact/
-      #
-      #- name: Delete workflow runs
-      #  uses: GitRML/delete-workflow-runs@main
-      #  with:
-      #    retain_days: 1
-      #    keep_minimum_runs: 3
-
       - name: Upload bin directory
         uses: actions/upload-artifact@main
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
