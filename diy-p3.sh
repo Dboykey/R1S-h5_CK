@@ -4,6 +4,8 @@
 ####  第三部分：调整代码  ####
 ##############################
 
+cd h5
+
 # 调整 lede 的插件
 git clone https://github.com/coolsnowwolf/lede 5.4
 cd 5.4

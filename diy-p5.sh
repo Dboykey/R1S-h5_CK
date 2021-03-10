@@ -4,6 +4,8 @@
 ####  第五部分：生成R1S固件  ####
 #################################
 
+cd h5
+
 # 调整生成SD镜像的脚本
 cp scripts/build.sh scripts/build.sh.bak
 
