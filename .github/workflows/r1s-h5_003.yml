@@ -19,7 +19,7 @@ env:
   DIY_P3_SH: diy-p3.sh
   DIY_P4_SH: diy-p4.sh
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  UPLOAD_FIRMWARE: false
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: true
