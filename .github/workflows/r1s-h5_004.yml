@@ -52,21 +52,18 @@ jobs:
         run: |
           # 第三部分：调整代码
           chmod +x $DIY_P3_SH
-          cd h5
           $GITHUB_WORKSPACE/$DIY_P3_SH
 
       - name: Build OpenWrt
         run: |
           # 第四部分：编译WRT
           chmod +x $DIY_P4_SH
-          cd h5/friendlywrt
           $GITHUB_WORKSPACE/$DIY_P4_SH
 
       - name: Build SD img
         run: |
           # 第五部分：生成R1S固件
           chmod +x $DIY_P5_SH
-          cd h5
           $GITHUB_WORKSPACE/$DIY_P5_SH
 
       - name: SSH connection to Actions
