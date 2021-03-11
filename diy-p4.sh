@@ -23,5 +23,6 @@ rm naiveproxy-*.tar.gz
 cd ../../
 sed -i "s|sys/random.h|/usr/include/linux/random.h|g" build_dir/target-aarch64_cortex-a53_musl/naiveproxy-*/src/base/rand_util_posix.cc
 
-#make -j3
-make -j3 V=s
+
+make -j3
+#make -j3 V=s
