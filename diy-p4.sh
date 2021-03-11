@@ -6,7 +6,7 @@
 
 # 编译 OpenWrt
 cd h5/friendlywrt
-#cp ../../config.lede ./.config
+#cp ../../config.1806 ./.config
 cp $GITHUB_WORKSPACE/$CONFIG_FILE $GITHUB_WORKSPACE/openwrt/.config
 make defconfig
 make download
