@@ -14,11 +14,14 @@ make tools/compile
 make toolchain/compile
 make package/feeds/luci/luci-base/compile
 
-cp dl/naiveproxy-88.0.4324.96-1.tar.gz build_dir/target-aarch64_cortex-a53_musl/
+# naiveproxy-88.0.4324.96-1
+# naiveproxy-89.0.4389.72-1
+cp dl/naiveproxy-*.tar.gz build_dir/target-aarch64_cortex-a53_musl/
 cd ./build_dir/target-aarch64_cortex-a53_musl/
-tar zxvf naiveproxy-88.0.4324.96-1.tar.gz
-rm naiveproxy-88.0.4324.96-1.tar.gz
+tar zxvf naiveproxy-*.tar.gz
+rm naiveproxy-*.tar.gz
 cd ../../
-sed -i "s|sys/random.h|/usr/include/linux/random.h|g" build_dir/target-aarch64_cortex-a53_musl/naiveproxy-88.0.4324.96-1/src/base/rand_util_posix.cc
+sed -i "s|sys/random.h|/usr/include/linux/random.h|g" build_dir/target-aarch64_cortex-a53_musl/naiveproxy-*/src/base/rand_util_posix.cc
 
-make -j3
+#make -j3
+make -j3 V=s
