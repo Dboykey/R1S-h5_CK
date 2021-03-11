@@ -55,6 +55,8 @@ rm -rf luci-app-cifsd
 rm -rf automount
 rm -rf ksmbd-tools
 rm -rf ksmbd
+rm -rf luci-app-flowoffload
+rm -rf luci-app-sfe
 
 # 更新下载 feed 前代码微调
 cd ../../
