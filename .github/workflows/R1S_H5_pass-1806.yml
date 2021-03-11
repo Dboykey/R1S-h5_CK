@@ -38,7 +38,7 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          # 第一部分：环境部署和源码下载
+          # 第一部分：环境部署
           chmod +x $DIY_P1_SH
           $GITHUB_WORKSPACE/$DIY_P1_SH
 
