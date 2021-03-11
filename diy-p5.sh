@@ -30,4 +30,5 @@ sed -i 's/root-allwinner-h5/root-sunxi/' device/friendlyelec/h5/base.mk
 ./build.sh nanopi_r1s.mk
 
 # 把生成的镜像复制到WRT的bin目录，方便上传到release
+rm $GITHUB_WORKSPACE/h5/friendlywrt/bin/targets/sunxi/cortexa53/openwrt*.gz
 cp out/F*gz $GITHUB_WORKSPACE/h5/friendlywrt/bin/targets/sunxi/cortexa53/

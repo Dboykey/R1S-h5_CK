@@ -57,6 +57,8 @@ rm -rf ksmbd-tools
 rm -rf ksmbd
 rm -rf luci-app-flowoffload
 rm -rf luci-app-sfe
+rm -rf shortcut-fe
+rm -rf fast-classifier
 
 # 更新下载 feed 前代码微调
 cd ../../
@@ -74,6 +76,8 @@ cp -r ../add/Rosy/luci-theme-rosy ./package/lean/
 git clone https://github.com/linkease/ddnsto-openwrt.git ../add/ddnsto
 cp -r ../add/ddnsto/luci-app-ddnsto ./package/lean/
 cp -r ../add/ddnsto/ddnsto ./package/network/services/
+git clone https://github.com/fw876/helloworld.git ../add/SSR
+cp -r ../add/SSR/luci-app-ssr-plus ./package/lean/
 
 # 更新下载 feeds
 ./scripts/feeds update -a
@@ -82,13 +86,13 @@ cp -r ../add/ddnsto/ddnsto ./package/network/services/
 rm -rf feed/luci/collections/luci-app-unbound
 rm -rf feed/luci/collections/luci-app-nginx
 rm -rf feed/luci/collections/luci-app-ssl-nginx
-rm -rf package/feeds/luci/luci-ssl-nginx
 rm -rf feeds/luci/collections/luci-nginx
 rm -rf feeds/luci/collections/luci-ssl-nginx
-rm -rf package/feeds/luci/luci-app-unbound
-rm -rf feeds/luci/applications/luci-app-unbound
-rm -rf package/feeds/luci/luci-app-transmission
 rm -rf feeds/luci/applications/luci-app-transmission
+rm -rf feeds/luci/applications/luci-app-unbound
+rm -rf package/feeds/luci/luci-app-unbound
+rm -rf package/feeds/luci/luci-app-transmission
+rm -rf package/feeds/luci/luci-ssl-nginx
 
 # 安装 feed 前代码微调
 mv package/CKdiy/packr feeds/packages/devel/
