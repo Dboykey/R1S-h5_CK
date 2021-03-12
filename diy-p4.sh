@@ -17,7 +17,7 @@ make package/feeds/luci/luci-base/compile
 cd dl
 ls naiveproxy* >name.txt
 NAME1=$(cat name.txt)
-cat name.txt | sed -i 's/.tar.gz//g' name.txt
+sed -i 's/.tar.gz//g' name.txt
 NAME2=$(cat name.txt)
 cd ..
 cp dl/$NAME1 build_dir/target-aarch64_cortex-a53_musl/
