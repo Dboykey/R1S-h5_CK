@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #
 ##############################
 ####  第三部分：调整代码  ####
@@ -93,6 +93,18 @@ rm -rf feeds/luci/applications/luci-app-unbound
 rm -rf package/feeds/luci/luci-app-unbound
 rm -rf package/feeds/luci/luci-app-transmission
 rm -rf package/feeds/luci/luci-ssl-nginx
+rm -rf feeds/luci/applications/luci-app-sqm
+rm -rf package/feeds/luci/luci-app-sqm
+rm -rf package/feeds/luci/luci-app-transmission
+rm -rf package/feeds/luci/luci-app-unbound
+rm -rf package/feeds/luci/luci-nginx
+rm -rf package/feeds/luci/luci-ssl-nginx
+rm -rf package/feeds/packages/sqm-scripts
+rm -rf feeds/packages/net/sqm-scripts
+rm -rf feeds/packages.tmp/info/.packageinfo-net_sqm-scripts
+rm -rf package/feeds/packages/sqm-scripts-extra
+rm -rf feeds/packages/net/sqm-scripts-extra
+rm -rf feeds/packages.tmp/info/.packageinfo-net_sqm-scripts-extra
 
 # 安装 feed 前代码微调
 mv package/CKdiy/packr feeds/packages/devel/
