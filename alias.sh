@@ -1,4 +1,6 @@
-﻿alias cls='clear'
+#!/bin/bash
+
+alias cls='clear'
 alias df='df -h'
 alias duu='du -sh'
 alias egrep='egrep --color=auto'
