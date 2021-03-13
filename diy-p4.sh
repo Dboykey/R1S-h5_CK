@@ -29,7 +29,7 @@ sed -i "s|sys/random.h|/usr/include/linux/random.h|g" build_dir/target-aarch64_c
 make tools/compile
 make toolchain/compile
 make package/feeds/luci/luci-base/compile
-make package/passwall/naiveproxy/compile
+#make package/passwall/naiveproxy/compile
 
 make -j1
 #make -j3
