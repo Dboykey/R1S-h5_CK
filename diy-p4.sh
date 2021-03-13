@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #
 #############################
 ####  第四部分：编译WRT  ####
@@ -7,17 +7,20 @@
 # 编译 OpenWrt
 cd h5/friendlywrt
 #cp ../../config.1806 ./.config
-cp $GITHUB_WORKSPACE/$CONFIG_FILE $GITHUB_WORKSPACE/openwrt/.config
+cp $GITHUB_WORKSPACE/$CONFIG_FILE ./.config
 make defconfig
 make download
 
 mkdir -p build_dir/target-aarch64_cortex-a53_musl/
 cd dl
-ls naiveproxy* >name.txt
+ls naiveproxy* >name1.txt
 ##添加只取最后一行内容
-NAME1=$(cat name.txt)
-sed -i 's/.tar.gz//g' name.txt
-NAME2=$(cat name.txt)
+sed -n '$p' name1.txt >name2.txt
+#或
+#cat name1.txt | awk 'END {print}' >name2.txt
+NAME1=$(cat name2.txt)
+sed 's/.tar.gz//g' name2.txt >name3.txt
+NAME2=$(cat name3.txt)
 cd ..
 cp dl/$NAME1 build_dir/target-aarch64_cortex-a53_musl/
 cd ./build_dir/target-aarch64_cortex-a53_musl/
