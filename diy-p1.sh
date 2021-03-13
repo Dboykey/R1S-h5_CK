@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #
 ##############################
 ####  第一部分：环境部署  ####
@@ -11,11 +11,12 @@ sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
 sudo -E apt-get -qq autoremove --purge
 sudo -E apt-get -qq clean
 sudo timedatectl set-timezone "$TZ"
-sudo apt-get -y install bc libtinfo5 build-essential asciidoc binutils bzip2 gawk gettext \
-  git libncurses5-dev libz-dev unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex \
-  uglifyjs git-core gcc-multilib autopoint msmtp libssl-dev texinfo libglib2.0-dev xmlto \
-  qemu-utils upx libelf-dev autoconf automake libtool device-tree-compiler patch p7zip \
-  p7zip-full curl ne screen htop libxcb-ewmh-dev parted dosfstools gcc-aarch64-linux-gnu 
+sudo apt-get -y install ne bc libtinfo5 build-essential asciidoc binutils bzip2 gawk gettext
+sudo apt-get -y install git libncurses5-dev libz-dev unzip zlib1g-dev lib32gcc1 subversion
+sudo apt-get -y install flex libc6-dev-i386 uglifyjs git-core gcc-multilib autopoint msmtp
+sudo apt-get -y install libssl-dev texinfo libglib2.0-dev xmlto libelf-dev autoconf libtool
+sudo apt-get -y install qemu-utils upx device-tree-compiler patch p7zip p7zip-full automake
+sudo apt-get -y install curl screen htop libxcb-ewmh-dev parted dosfstools gcc-aarch64-linux-gnu
 wget -O - https://raw.githubusercontent.com/friendlyarm/build-env-on-ubuntu-bionic/master/install.sh | bash
 sudo mkdir -p /workdir
 sudo chown $USER:$GROUPS /workdir

@@ -5,9 +5,9 @@
 #############################
 
 # 编译 OpenWrt
-cd h5/friendlywrt
 #cp ../../config.1806 ./.config
-cp $GITHUB_WORKSPACE/$CONFIG_FILE ./.config
+cp $CONFIG_FILE openwrt/.config
+cd h5/friendlywrt
 make defconfig
 make download
 
@@ -26,9 +26,9 @@ cp dl/$NAME1 build_dir/target-aarch64_cortex-a53_musl/
 cd ./build_dir/target-aarch64_cortex-a53_musl/
 tar zxvf $NAME1
 rm $NAME1
-cd ../../
-sed -i "s|sys/random.h|/usr/include/linux/random.h|g" build_dir/target-aarch64_cortex-a53_musl/$NAME2/src/base/rand_util_posix.cc
-
+cd $NAME2/src/base/
+sed -i "s|sys/random.h|/usr/include/linux/random.h|g" rand_util_posix.cc
+cd $GITHUB_WORKSPACE/openwrt
 make tools/compile
 make toolchain/compile
 make package/feeds/luci/luci-base/compile
