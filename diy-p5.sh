@@ -21,12 +21,11 @@ cd ..
 cp dl/$NAME1 build_dir/target-aarch64_cortex-a53_musl/
 cd build_dir/target-aarch64_cortex-a53_musl/
 tar zxvf $NAME1
-rm $NAME1
+#rm $NAME1
 cd $NAME2/src/base/
 sed -i "s|sys/random.h|/usr/include/linux/random.h|g" rand_util_posix.cc
 
 cd $GITHUB_WORKSPACE/openwrt
 make package/passwall/naiveproxy/compile
 
-#make -j1
-make -j3 V=s
+make -j1 V=s
