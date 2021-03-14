@@ -61,18 +61,18 @@ jobs:
           chmod +x $DIY_P4_SH
           $GITHUB_WORKSPACE/$DIY_P4_SH
 
-      - name: Build OpenWrt B
-        run: |
-          # 第四部分-B：编译 naiveproxy 及完成编译
-          chmod +x $DIY_P5_SH
-          $GITHUB_WORKSPACE/$DIY_P5_SH
-
       - name: SSH connection to Actions
         uses: Dboykey/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+
+      - name: Build OpenWrt B
+        run: |
+          # 第四部分-B：编译 naiveproxy 及完成编译
+          chmod +x $DIY_P5_SH
+          $GITHUB_WORKSPACE/$DIY_P5_SH
 
       - name: Build SD img
         run: |
