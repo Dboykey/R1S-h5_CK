@@ -1,4 +1,4 @@
-name: R1S_H5_1806-001
+name: R1S_H5_1806-002
 
 on:
   repository_dispatch:
@@ -19,6 +19,7 @@ env:
   DIY_P3_SH: diy-p3.sh
   DIY_P4_SH: diy-p4.sh
   DIY_P5_SH: diy-p5.sh
+  DIY_P6_SH: diy-p6.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
@@ -54,11 +55,17 @@ jobs:
           chmod +x $DIY_P3_SH
           $GITHUB_WORKSPACE/$DIY_P3_SH
 
-      - name: Build OpenWrt
+      - name: Build OpenWrt A
         run: |
-          # 第四部分：编译WRT
+          # 第四部分-A：编译 WRT 的部分前置排错
           chmod +x $DIY_P4_SH
           $GITHUB_WORKSPACE/$DIY_P4_SH
+
+      - name: Build OpenWrt B
+        run: |
+          # 第四部分-B：编译 naiveproxy 及完成编译
+          chmod +x $DIY_P5_SH
+          $GITHUB_WORKSPACE/$DIY_P5_SH
 
       - name: SSH connection to Actions
         uses: Dboykey/ssh2actions@v1.0.0
@@ -70,8 +77,8 @@ jobs:
       - name: Build SD img
         run: |
           # 第五部分：生成R1S固件
-          chmod +x $DIY_P5_SH
-          $GITHUB_WORKSPACE/$DIY_P5_SH
+          chmod +x $DIY_P6_SH
+          $GITHUB_WORKSPACE/$DIY_P6_SH
 
       - name: Upload bin directory
         uses: actions/upload-artifact@main
