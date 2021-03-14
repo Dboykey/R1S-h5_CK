@@ -5,7 +5,7 @@
 #############################
 
 # 编译 OpenWrt
-#cp ../../config.1806 ./.config
+#cp config.1806 openwrt/.config
 cp $CONFIG_FILE openwrt/.config
 cd openwrt
 make defconfig
