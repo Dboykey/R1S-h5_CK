@@ -47,8 +47,8 @@ jobs:
         uses: Dboykey/ssh2actions@v1.0.0
         if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
         env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ 1013408223 }}
+          TELEGRAM_BOT_TOKEN: ${{ 1715310287:AAF91nG2COSxr0H63bwHL1umWOuqa-xC1F4 }}
 
       - name: Build SD img
         run: |
