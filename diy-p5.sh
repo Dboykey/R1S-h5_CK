@@ -26,6 +26,9 @@
 #sed -i "s|sys/random.h|/usr/include/linux/random.h|g" rand_util_posix.cc
 
 cd $GITHUB_WORKSPACE/openwrt
+make tools/compile
+make toolchain/compile
+make package/feeds/luci/luci-base/compile
 make package/passwall/naiveproxy/compile
 
 make -j1 V=s

@@ -5,14 +5,10 @@
 #############################
 
 # 编译 OpenWrt
-#cp config.1806 openwrt/.config
-cp $CONFIG_FILE openwrt/.config
+cp config.1806 openwrt/.config
 cd openwrt
 make defconfig
 make download
-make tools/compile
-make toolchain/compile
-make package/feeds/luci/luci-base/compile
 
 #mkdir -p build_dir/target-aarch64_cortex-a53_musl/
 cd dl
