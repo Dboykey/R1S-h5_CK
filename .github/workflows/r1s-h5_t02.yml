@@ -41,7 +41,7 @@ jobs:
         run: |
           # 第一部分：环境部署
           chmod +x $DIY_P1_SH
-          $GITHUB_WORKSPACE/$DIY_P1_SH
+          #$GITHUB_WORKSPACE/$DIY_P1_SH
 
       - name: SSH connection to Actions
         uses: Dboykey/ssh2actions@v1.0.0
