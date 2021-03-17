@@ -10,7 +10,7 @@ cd openwrt
 make defconfig
 make download
 
-#mkdir -p build_dir/target-aarch64_cortex-a53_musl/
+mkdir -p build_dir/target-aarch64_cortex-a53_musl/
 cd dl
 ls naiveproxy* >name1.txt
 ##添加只取最后一行内容
