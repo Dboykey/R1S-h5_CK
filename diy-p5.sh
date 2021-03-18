@@ -26,7 +26,7 @@
 #sed -i "s|sys/random.h|/usr/include/linux/random.h|g" rand_util_posix.cc
 
 #cd $GITHUB_WORKSPACE/openwrt
-cd openwrt
-make package/passwall/naiveproxy/compile
+#cd openwrt
+#make package/passwall/naiveproxy/compile
 
-make -j1 V=s
+#make -j1 V=s

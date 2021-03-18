@@ -32,3 +32,6 @@ tar zxvf $NAME1
 #rm $NAME1
 cd $NAME2/src/base/
 sed -i "s|sys/random.h|/usr/include/linux/random.h|g" rand_util_posix.cc
+make package/passwall/naiveproxy/compile
+
+make -j1 V=s
