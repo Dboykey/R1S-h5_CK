@@ -9,8 +9,12 @@ cp config.1806 openwrt/.config
 cd openwrt
 make defconfig
 make download
+make tools/compile
+make toolchain/compile
+make package/feeds/luci/luci-base/compile
 
-mkdir -p build_dir/target-aarch64_cortex-a53_musl/
+## 编译 OpenWrt - naiveproxy
+#mkdir -p build_dir/target-aarch64_cortex-a53_musl/
 cd dl
 ls naiveproxy* >name1.txt
 ##添加只取最后一行内容
